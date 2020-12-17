@@ -1,5 +1,6 @@
 package com.example.gittest.contract;
 
+import com.example.gittest.base.BaseView;
 import com.example.gittest.bean.UserBean;
 import com.example.gittest.utils.net.INetCallBack;
 
@@ -14,7 +15,7 @@ public class MainContract {
         void loginResult(String result);
     }
 
-    public interface IMainView {
+    public interface IMainView extends BaseView {
         String getUserName();
         String getPassword();
         void getLoginData(UserBean string);

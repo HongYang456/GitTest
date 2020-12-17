@@ -6,14 +6,12 @@ import com.example.gittest.contract.MainContract;
 import com.example.gittest.mdoel.MainModel;
 import com.example.gittest.utils.net.INetCallBack;
 
-public class MainPresenter extends BasePresenter implements MainContract.IMainPresenter {
+public class MainPresenter extends BasePresenter<MainContract.IMainView> implements MainContract.IMainPresenter {
 
     private MainContract.IMainModel mainModel;
-    private MainContract.IMainView mainView;
 
     public MainPresenter(MainContract.IMainView mainView) {
         this.mainModel = new MainModel(this);
-        this.mainView = mainView;
     }
 
     @Override
@@ -21,7 +19,7 @@ public class MainPresenter extends BasePresenter implements MainContract.IMainPr
         mainModel.getLoginData("", new INetCallBack<UserBean>() {
             @Override
             public void success(UserBean userBean) {
-                mainView.getLoginData(userBean);
+                iview.getLoginData(userBean);
             }
 
             @Override
