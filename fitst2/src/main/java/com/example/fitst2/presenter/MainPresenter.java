@@ -1,6 +1,7 @@
 package com.example.fitst2.presenter;
 
 
+import com.example.fitst2.MainActivity;
 import com.example.fitst2.base.BasePresenter;
 import com.example.fitst2.bean.UserBean;
 import com.example.fitst2.contract.MainContract;
@@ -11,7 +12,7 @@ public class MainPresenter extends BasePresenter<MainContract.IMainView> impleme
 
     private MainContract.IMainModel mainModel;
 
-    public MainPresenter(MainContract.IMainView mainView) {
+    public MainPresenter(MainActivity mainView) {
         this.mainModel = new MainModel(this);
     }
 
