@@ -1,16 +1,17 @@
-package com.example.first1.presenter;
+package com.example.fitst2.presenter;
 
-import com.example.first1.MainActivity;
-import com.example.first1.base.BasePresenter;
-import com.example.first1.bean.UserBean;
-import com.example.first1.contract.MainContract;
-import com.example.first1.model.MainModel;
-import com.example.first1.utils.net.INetCallBack;
+
+import com.example.fitst2.base.BasePresenter;
+import com.example.fitst2.bean.UserBean;
+import com.example.fitst2.contract.MainContract;
+import com.example.fitst2.mdoel.MainModel;
+import com.example.fitst2.net.INetCallBack;
 
 public class MainPresenter extends BasePresenter<MainContract.IMainView> implements MainContract.IMainPresenter {
+
     private MainContract.IMainModel mainModel;
 
-    public MainPresenter(MainActivity mainModel) {
+    public MainPresenter(MainContract.IMainView mainView) {
         this.mainModel = new MainModel(this);
     }
 
@@ -18,12 +19,12 @@ public class MainPresenter extends BasePresenter<MainContract.IMainView> impleme
     public void login(String name, String password) {
         mainModel.getLoginData("", new INetCallBack<UserBean>() {
             @Override
-            public void sunccess(UserBean userBean) {
+            public void success(UserBean userBean) {
                 iview.getLoginData(userBean);
             }
 
             @Override
-            public void onFiil(String err) {
+            public void onFail(String err) {
 
             }
         });
@@ -31,6 +32,5 @@ public class MainPresenter extends BasePresenter<MainContract.IMainView> impleme
 
     @Override
     public void loginResult(String result) {
-
     }
 }

@@ -1,3 +1,4 @@
+include ':fitst2'
 include ':first1'
 include ':app'
 rootProject.name = "GitTest"
