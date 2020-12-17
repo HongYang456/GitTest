@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.example.gittest.base.BaseActivity;
+import com.example.gittest.bean.UserBean;
 import com.example.gittest.contract.MainContract;
 import com.example.gittest.presenter.MainPresenter;
 
@@ -35,11 +36,6 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
         return R.layout.activity_main;
     }
 
-    //返回数据
-    @Override
-    public void getLoginData(String string) {
-
-    }
 
     @Override
     public String getUserName() {
@@ -49,6 +45,11 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
     @Override
     public String getPassword() {
         return editTextTextPassword2.getText().toString();
+    }
+
+    @Override
+    public void getLoginData(UserBean string) {
+        //网络请求
     }
 
     /*
