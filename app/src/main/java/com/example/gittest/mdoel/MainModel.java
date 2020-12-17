@@ -12,9 +12,9 @@ public class MainModel implements MainContract.IMainModel {
         this.presenter = presenter;
     }
 
-
     @Override
     public <T> void getLoginData(String url, INetCallBack<T> callBack) {
         RetrofitUtils.getInstance().get(url, callBack);
     }
 }
+//
