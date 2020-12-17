@@ -1,8 +1,11 @@
 package com.example.gittest.contract;
 
+import com.example.gittest.bean.UserBean;
+import com.example.gittest.utils.net.INetCallBack;
+
 public class MainContract {
     public interface IMainModel {
-        void getLoginData();
+        <T> void getLoginData(String url, INetCallBack<T> callBack);
     }
 
     public interface IMainPresenter {
@@ -14,6 +17,6 @@ public class MainContract {
     public interface IMainView {
         String getUserName();
         String getPassword();
-        void getLoginData(String string);
+        void getLoginData(UserBean string);
     }
 }

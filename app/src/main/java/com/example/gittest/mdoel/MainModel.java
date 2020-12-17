@@ -1,6 +1,8 @@
 package com.example.gittest.mdoel;
 
 import com.example.gittest.contract.MainContract;
+import com.example.gittest.utils.net.INetCallBack;
+import com.example.gittest.utils.net.RetrofitUtils;
 
 public class MainModel implements MainContract.IMainModel {
 
@@ -10,8 +12,9 @@ public class MainModel implements MainContract.IMainModel {
         this.presenter = presenter;
     }
 
+
     @Override
-    public void getLoginData() {
-        presenter.loginResult("YES");
+    public <T> void getLoginData(String url, INetCallBack<T> callBack) {
+        RetrofitUtils.getInstance().get(url, callBack);
     }
 }
