@@ -1,8 +1,8 @@
 package com.example.gittest.mdoel;
 
 import com.example.gittest.contract.MainContract;
-import com.example.gittest.utils.net.INetCallBack;
-import com.example.gittest.utils.net.RetrofitUtils;
+import com.example.mvplibrary.net.INetCallBack;
+import com.example.mvplibrary.net.RetrofitUtils;
 
 public class MainModel implements MainContract.IMainModel {
 

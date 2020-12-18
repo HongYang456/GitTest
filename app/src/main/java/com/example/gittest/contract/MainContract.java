@@ -1,11 +1,12 @@
 package com.example.gittest.contract;
 
-import com.example.gittest.base.BaseView;
 import com.example.gittest.bean.UserBean;
-import com.example.gittest.utils.net.INetCallBack;
+import com.example.mvplibrary.base.BaseView;
+import com.example.mvplibrary.base.IBaseModel;
+import com.example.mvplibrary.net.INetCallBack;
 
 public class MainContract {
-    public interface IMainModel {
+    public interface IMainModel extends IBaseModel {
         <T> void getLoginData(String url, INetCallBack<T> callBack);
     }
 
